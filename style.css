@@ -830,7 +830,6 @@ footer {
 }
 
 .css-fade-up {
-    /* Starts hidden, animation takes over */
     opacity: 0;
     visibility: hidden;
     animation: cssFadeUpAnim 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
