@@ -9,7 +9,7 @@
 ![Whisk](https://img.shields.io/badge/Whisk-FF6A00.svg?style=for-the-badge&logo=google&logoColor=white)
 ![Flow](https://img.shields.io/badge/Flow-4300FF.svg?style=for-the-badge&logo=google&logoColor=white)
 
-Uma landing page focada em alta conversão e estética "Dark Luxury", desenvolvida sob medida para o personal trainer Igor Barbosa. O projeto apresenta os planos de consultoria online e atendimento VIP presencial com um design inovador e hiper-dinâmico.
+Uma landing page focada em alta conversão e estética, desenvolvida sob medida para o personal trainer Igor Barbosa. O projeto apresenta os planos de consultoria online e atendimento VIP presencial com um design inovador e hiper-dinâmico.
 
 ## 🌐 Deploy Ativo
 O projeto está online e acessível publicamente através da infraestrutura de alta performance da Vercel:
