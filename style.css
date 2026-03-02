@@ -104,7 +104,7 @@ section {
     transition: color 0.3s ease;
 }
 
-.header-socials .social-link i {
+.header-socials .social-link svg {
     font-size: 1.5rem;
     color: var(--accent-brand-light);
 }
@@ -279,12 +279,12 @@ section {
     gap: 10px;
 }
 
-.btn-instagram i {
+.btn-instagram svg {
     font-size: 1.2rem;
     color: var(--accent-brand-light);
 }
 
-.btn-instagram:hover i {
+.btn-instagram:hover svg {
     color: var(--text-primary);
 }
 
@@ -297,11 +297,11 @@ section {
     gap: 1rem;
 }
 
-.btn-animated i {
+.btn-animated svg {
     transition: transform 0.4s var(--ease-out-expo);
 }
 
-.btn-animated:hover i {
+.btn-animated:hover svg {
     transform: translateX(10px);
 }
 
@@ -570,7 +570,7 @@ section {
     font-size: 0.95rem;
 }
 
-.pricing-features i {
+.pricing-features svg {
     color: var(--accent-brand-light);
 }
 
