@@ -1,6 +1,5 @@
 /* Base Reset & Variables */
 :root {
-    /* Color Palette - Dark Luxury / Metallic */
     --bg-base: #0a0a0a;
     --bg-secondary: #141414;
     --bg-tertiary: #1c1c1c;
@@ -10,20 +9,16 @@
     --text-tertiary: #6b6b6b;
 
     --accent-brand: #470993;
-    /* Deep Purple from Logo */
     --accent-brand-light: #7945BD;
-    /* Lighter Purple from Logo */
     --accent-dark: #2a2a2a;
 
     --btn-primary-bg: var(--accent-brand-light);
     --btn-primary-text: #ffffff;
     --btn-secondary-border: rgba(245, 245, 245, 0.3);
 
-    /* Typography */
     --font-heading: 'Syncopate', sans-serif;
     --font-body: 'Inter', sans-serif;
 
-    /* Easing */
     --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
     --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 
@@ -56,7 +51,6 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
-/* Typography */
 h1,
 h2,
 h3,
@@ -68,7 +62,6 @@ h4 {
     font-weight: 700;
 }
 
-/* Layout Utilities */
 .container {
     width: 100%;
     max-width: 1300px;
@@ -82,7 +75,6 @@ section {
     z-index: 10;
 }
 
-/* HEADER / LOGO */
 .main-header {
     position: absolute;
     top: 0;
@@ -90,7 +82,6 @@ section {
     width: 100%;
     z-index: 100;
     padding: var(--spacing-sm) 0;
-    /* Move closer to top */
 }
 
 .header-container {
@@ -124,13 +115,11 @@ section {
 
 .header-logo {
     height: 85px;
-    /* Increased size as requested */
     width: auto;
     object-fit: contain;
     filter: drop-shadow(0 4px 10px rgba(0, 0, 0, 0.5));
 }
 
-/* HERO SECTION */
 .hero-section {
     height: 100vh;
     min-height: 600px;
@@ -155,10 +144,8 @@ section {
     object-fit: cover;
     z-index: -3;
     opacity: 0.6;
-    /* Darken the image output slightly */
     transform-origin: center center;
     will-change: transform;
-    /* Important for the scale-in animation */
 }
 
 #dust-overlay {
@@ -204,7 +191,6 @@ section {
     gap: 0.3em;
 }
 
-/* For staggered word animations */
 .hero-title .word {
     display: inline-block;
 }
@@ -223,7 +209,6 @@ section {
     margin-top: var(--spacing-md);
 }
 
-/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -239,7 +224,6 @@ section {
     cursor: pointer;
     position: relative;
     overflow: hidden;
-    /* Magnetic properties applied via JS */
 }
 
 .btn::before {
@@ -261,7 +245,6 @@ section {
     height: 300px;
 }
 
-/* Ensure text stays above JS injected glow */
 .btn-primary,
 .btn-secondary {
     position: relative;
@@ -439,7 +422,6 @@ section {
     font-size: 0.95rem;
 }
 
-/* PRICING SECTION (MENTORIA) */
 .pricing-section {
     background-color: var(--bg-secondary);
     border-top: 1px solid rgba(255, 255, 255, 0.05);
@@ -469,10 +451,8 @@ section {
     position: relative;
     height: 100%;
     transition: transform 0.4s var(--ease-out-expo), border-color 0.4s ease;
-    /* Removed overflow: hidden so badge can overflow */
 }
 
-/* Interactive Edge Lighting tracked by Mouse (via JS --x and --y) */
 .pricing-card::before {
     content: "";
     position: absolute;
@@ -503,7 +483,6 @@ section {
 .pricing-card:hover {
     transform: translateY(-10px);
     border-color: transparent;
-    /* Replaced by edge light */
 }
 
 .pricing-card.featured {
@@ -527,7 +506,6 @@ section {
 .pricing-badge {
     position: absolute;
     top: -15px;
-    /* Give it slightly more room to stick out */
     left: 50%;
     transform: translateX(-50%);
     background-color: var(--accent-brand-light);
@@ -539,11 +517,8 @@ section {
     text-transform: uppercase;
     letter-spacing: 0.1em;
     z-index: 20;
-    /* Ensure it stays above everything */
     white-space: nowrap;
-    /* Prevent "MAIS POPULAR" from wrapping into two lines */
     box-shadow: 0 4px 10px rgba(121, 69, 189, 0.4);
-    /* Add glowing shadow to make it pop */
 }
 
 .pricing-header {
@@ -748,9 +723,6 @@ footer {
     font-size: 0.8rem;
 }
 
-
-/* RESPONSIVE */
-/* Tablet & Small Desktop (Max 1024px) */
 @media (max-width: 1024px) {
     .split-layout {
         gap: var(--spacing-lg);
@@ -758,12 +730,10 @@ footer {
 
     .pricing-grid {
         grid-template-columns: repeat(2, 1fr);
-        /* 2 columns on tablet instead of 4 */
         gap: var(--spacing-lg);
     }
 }
 
-/* Mobile (Max 768px) */
 @media (max-width: 768px) {
     .split-layout {
         grid-template-columns: 1fr;
@@ -775,12 +745,10 @@ footer {
 
     .method-grid {
         grid-template-columns: 1fr;
-        /* Stack the 3 method cards */
     }
 
     .pricing-grid {
         grid-template-columns: 1fr;
-        /* Stack pricing cards */
     }
 
     .hero-ctas {
@@ -826,7 +794,6 @@ footer {
     }
 }
 
-/* Very Small Mobile (Max 480px) */
 @media (max-width: 480px) {
     .header-logo {
         height: 50px;
@@ -834,7 +801,6 @@ footer {
 
     .social-link span {
         display: none;
-        /* Hide @igor.ibs text on very small screens, keep just the icon */
     }
 
     .hero-title {
@@ -842,11 +808,6 @@ footer {
     }
 }
 
-/* 
-    Initial states for animations - controlled by JS 
-    To fallback graciously without JS, opacity defaults to 1,
-    but JS will set them to 0 on load.
-*/
 .fade-up,
 .text-reveal,
 .card-reveal {
@@ -854,10 +815,6 @@ footer {
     visibility: hidden;
 }
 
-/* 
-    Pure CSS Animations for Above-the-Fold (LCP Optimization)
-    These elements animate immediately without waiting for JS/GSAP
-*/
 @keyframes cssFadeUpAnim {
     0% {
         opacity: 0;
@@ -872,6 +829,5 @@ footer {
 
 .css-fade-up {
     opacity: 0;
-    /* Starts hidden, animation takes over */
     animation: cssFadeUpAnim 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
 }
