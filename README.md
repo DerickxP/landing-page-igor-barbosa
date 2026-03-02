@@ -19,6 +19,7 @@ O projeto está online e acessível publicamente através da infraestrutura de a
 
 - **HTML5 & CSS3 (Vanilla)**: Estruturação semântica e estilização avançada com variáveis, Flexbox e CSS Grid.
 - **JavaScript (ES6+)**: Lógica de interações DOM.
+- **Animação Geração (AI):** A animação central de fundo do site foi inteiramente gerada e orquestrada utilizando o poder combinado de **Veo 3**, **Whisk** e **Flow**.
 - **GSAP & ScrollTrigger**: Animações profissionais e de alta performance baseadas no scroll do usuário.
 - **Micro-interações de Interface**: Efeitos de "Glassmorphism", iluminação de borda reativa ao mouse (Edge Lighting) e botões com imantação (Magnetic Buttons).
 - **Design Responsivo (Mobile-First adaptado)**: Interfaces fluídas do celular ao monitor ultrawide.
