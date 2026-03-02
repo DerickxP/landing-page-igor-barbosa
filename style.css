@@ -853,3 +853,25 @@ footer {
     opacity: 0;
     visibility: hidden;
 }
+
+/* 
+    Pure CSS Animations for Above-the-Fold (LCP Optimization)
+    These elements animate immediately without waiting for JS/GSAP
+*/
+@keyframes cssFadeUpAnim {
+    0% {
+        opacity: 0;
+        transform: translateY(30px);
+    }
+
+    100% {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+.css-fade-up {
+    opacity: 0;
+    /* Starts hidden, animation takes over */
+    animation: cssFadeUpAnim 1s cubic-bezier(0.16, 1, 0.3, 1) forwards;
+}

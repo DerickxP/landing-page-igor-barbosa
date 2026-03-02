@@ -1,9 +1,8 @@
 document.addEventListener('DOMContentLoaded', () => {
-    // === 1. HERO CANVAS ANIMATION (ANIMIN SEQUENCE) ===
-    const canvas = document.getElementById('hero-bg-anim');
-    const ctx = canvas.getContext('2d', { alpha: false }); // Optimize for no transparency
 
-    // We have 80 frames, named Video - Chosen 720p_000.jpg to Video - Chosen 720p_079.jpg
+    const canvas = document.getElementById('hero-bg-anim');
+    const ctx = canvas.getContext('2d', { alpha: false });
+
     const frameCount = 80;
     const currentFrame = index => (
         `Animin/Video - Chosen 720p_${index.toString().padStart(3, '0')}.jpg`
@@ -13,11 +12,8 @@ document.addEventListener('DOMContentLoaded', () => {
     const airship = { frame: 0 };
     let imagesLoaded = 0;
 
-    // Resize canvas to cover window
     function resizeCanvas() {
-        // We ensure canvas covers the view by calculating aspect ratio
         const windowRatio = window.innerWidth / window.innerHeight;
-        // The original Animin frames seem to be 720p (1280x720) ratio 1.77
         const videoRatio = 1280 / 720;
 
         if (windowRatio > videoRatio) {
@@ -30,9 +26,8 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     window.addEventListener('resize', resizeCanvas);
-    resizeCanvas(); // initial sizing
+    resizeCanvas();
 
-    // Preload images
     for (let i = 0; i < frameCount; i++) {
         const img = new Image();
         img.src = currentFrame(i);
@@ -40,7 +35,7 @@ document.addEventListener('DOMContentLoaded', () => {
         img.onload = () => {
             imagesLoaded++;
             if (imagesLoaded === 1) {
-                // Draw first frame immediately to avoid blank flash
+                // Draw first frame immedia tely to avoid blank flash
                 renderFrame(0);
             }
         };
@@ -149,50 +144,19 @@ document.addEventListener('DOMContentLoaded', () => {
 
     animateParticles();
 
-
     // === 3. GSAP ANIMATIONS & SCROLL REVEAL ===
-
-    // Register ScrollTrigger
     gsap.registerPlugin(ScrollTrigger);
 
-    // Initial Hero Animation Timeline
     const tlHero = gsap.timeline();
 
-    // Reset initial states for JS
     gsap.set(['.fade-up', '.text-reveal', '.card-reveal'], { autoAlpha: 0 });
 
     tlHero
-        // 1. Scale-in effect on the canvas wrapper (1.05 to 1 over 3s ease)
         .fromTo('#hero-bg-anim',
             { scale: 1.05 },
             { scale: 1, duration: 3, ease: 'power2.out' }
-        )
-        // 1.5 Fade in Header / Logo
-        .fromTo('.main-header',
-            { y: -20, autoAlpha: 0 },
-            { y: 0, autoAlpha: 1, duration: 1, ease: 'power3.out' },
-            "-=2.5"
-        )
-        // 2. Fade in headline words staggering
-        .fromTo('.hero-title .word',
-            { y: 30, autoAlpha: 0 },
-            { y: 0, autoAlpha: 1, duration: 1, stagger: 0.15, ease: 'power3.out' },
-            "-=1.5" // Start slightly before scale finishes
-        )
-        // 3. Fade in subtitle
-        .fromTo('.hero-subtitle',
-            { y: 20, autoAlpha: 0 },
-            { y: 0, autoAlpha: 1, duration: 1, ease: 'power3.out' },
-            "-=1.5"
-        )
-        // 4. Fade in CTA buttons
-        .fromTo('.hero-ctas',
-            { y: 20, autoAlpha: 0 },
-            { y: 0, autoAlpha: 1, duration: 1, ease: 'power3.out' },
-            "-=1.2"
         );
 
-    // Parallax sub-elements on scroll
     gsap.to('.hero-content', {
         y: "25%",
         ease: "none",
@@ -216,11 +180,9 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     });
 
-    // Generic Scroll Reveals
     const revealSections = document.querySelectorAll('.scroll-reveal');
 
     revealSections.forEach(section => {
-        // Text blocks
         const texts = section.querySelectorAll('.text-reveal');
         if (texts.length > 0) {
             gsap.fromTo(texts,
@@ -239,7 +201,6 @@ document.addEventListener('DOMContentLoaded', () => {
             );
         }
 
-        // Cards (Method, Testimonials)
         const cards = section.querySelectorAll('.card-reveal');
         if (cards.length > 0) {
             gsap.fromTo(cards,
@@ -261,11 +222,9 @@ document.addEventListener('DOMContentLoaded', () => {
 
     // === 4. INNOVATIVE UX: MAGNETIC BUTTONS & EDGE LIGHTING ===
 
-    // Edge Lighting on Pricing Cards
     document.querySelectorAll('.pricing-card').forEach(card => {
         card.addEventListener('mousemove', e => {
             const rect = card.getBoundingClientRect();
-            // Calculate mouse position relative to card in percentage
             const x = ((e.clientX - rect.left) / rect.width) * 100;
             const y = ((e.clientY - rect.top) / rect.height) * 100;
             card.style.setProperty('--mouse-x', `${x}%`);
@@ -277,13 +236,10 @@ document.addEventListener('DOMContentLoaded', () => {
     document.querySelectorAll('.btn').forEach(btn => {
         btn.addEventListener('mousemove', e => {
             const rect = btn.getBoundingClientRect();
-            // Calculate distance from center to mouse
             const h = rect.width / 2;
             const v = rect.height / 2;
             const x = e.clientX - rect.left - h;
             const y = e.clientY - rect.top - v;
-
-            // Move button slightly towards the mouse
             btn.style.transform = `translate(${x * 0.2}px, ${y * 0.2}px)`;
         });
 
