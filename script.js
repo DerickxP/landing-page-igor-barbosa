@@ -35,7 +35,6 @@ document.addEventListener('DOMContentLoaded', () => {
         img.onload = () => {
             imagesLoaded++;
             if (imagesLoaded === 1) {
-                // Draw first frame immedia tely to avoid blank flash
                 renderFrame(0);
             }
         };
@@ -46,7 +45,6 @@ document.addEventListener('DOMContentLoaded', () => {
 
         ctx.clearRect(0, 0, canvas.width, canvas.height);
 
-        // Center image drawing to cover canvas
         const hRatio = canvas.width / images[index].width;
         const vRatio = canvas.height / images[index].height;
         const ratio = Math.max(hRatio, vRatio);
@@ -60,10 +58,8 @@ document.addEventListener('DOMContentLoaded', () => {
         );
     }
 
-    // Custom loop for slow motion
     let currentImageIndex = 0;
     let lastTime = 0;
-    // Lower FPS for slow motion effect. 80 frames over ~4 seconds = 20 fps. Lets try 20fps.
     const fps = 20;
     const fpsInterval = 1000 / fps;
 
@@ -71,7 +67,7 @@ document.addEventListener('DOMContentLoaded', () => {
         requestAnimationFrame(animateSequence);
 
         const elapsed = time - lastTime;
-        if (elapsed > fpsInterval && imagesLoaded > 10) { // start animating after a few load
+        if (elapsed > fpsInterval && imagesLoaded > 10) {
             lastTime = time - (elapsed % fpsInterval);
             renderFrame(currentImageIndex);
 
@@ -80,7 +76,6 @@ document.addEventListener('DOMContentLoaded', () => {
     }
 
     requestAnimationFrame(animateSequence);
-
 
     // === 2. DUST PARTICLES OVERLAY ===
     const dustCanvas = document.getElementById('dust-overlay');
@@ -98,7 +93,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function initParticles() {
         particles = [];
-        const particleCount = window.innerWidth < 768 ? 40 : 100; // Less on mobile
+        const particleCount = window.innerWidth < 768 ? 40 : 100;
         for (let i = 0; i < particleCount; i++) {
             particles.push({
                 x: Math.random() * dustCanvas.width,
