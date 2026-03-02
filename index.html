@@ -1,0 +1,259 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Igor Barbosa | Personal Trainer</title>
+    <!-- Google Fonts: Syncopate for bold, wide headings, Inter for clean minimal body -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link
+        href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;600&family=Syncopate:wght@400;700&display=swap"
+        rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+    <!-- Phosphor Icons for minimalist icons -->
+    <script src="https://unpkg.com/@phosphor-icons/web"></script>
+</head>
+
+<body>
+    <!-- HEADER / LOGO -->
+    <header class="main-header fade-up">
+        <div class="container header-container">
+            <img src="logo.png" alt="Igor Barbosa Logo" class="header-logo">
+
+            <div class="header-socials">
+                <a href="https://www.instagram.com/igor.ibs?igsh=aXN5cHhiY2o4MXJu" target="_blank"
+                    rel="noopener noreferrer" class="social-link">
+                    <i class="ph ph-instagram-logo"></i>
+                    <span>@igor.ibs</span>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- HERO SECTION -->
+    <section class="hero-section" id="hero">
+        <!-- Background Animation Canvas -->
+        <canvas id="hero-bg-anim"></canvas>
+
+        <!-- Subtle Dust overlay -->
+        <canvas id="dust-overlay"></canvas>
+
+        <!-- Dark gradient overlay to ensure text readability -->
+        <div class="hero-overlay"></div>
+
+        <div class="hero-content parallax-element">
+            <h1 class="hero-title">
+                <span class="word fade-up">FORÇA.</span>
+                <span class="word fade-up delay-1">DISCIPLINA.</span>
+                <span class="word fade-up delay-2">RESULTADO.</span>
+            </h1>
+            <p class="hero-subtitle fade-up delay-3">Transforme seu corpo com acompanhamento personalizado de alta
+                performance.</p>
+
+            <div class="hero-ctas fade-up delay-4">
+                <a href="#cta-section" class="btn btn-primary">COMEÇAR AGORA</a>
+                <a href="#method" class="btn btn-secondary">Conhecer o método</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 2: ABOUT -->
+    <section class="about-section scroll-reveal" id="about">
+        <div class="container">
+            <div class="split-layout">
+                <div class="split-image-container parallax-element-subtle">
+                    <!-- Placeholder using a dynamic dark aesthetic image if specific image isn't provided -->
+                    <img src="https://images.unsplash.com/photo-1571019614242-c5c5dee9f50b?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80"
+                        alt="Treinador em ação" class="split-image">
+                    <div class="image-accent"></div>
+                </div>
+                <div class="split-text">
+                    <h2 class="section-title text-reveal">Igor Barbosa</h2>
+                    <p class="section-body text-reveal delay-1">Sou Personal Trainer formado em Educação Física
+                        (Bacharelado) e pós-graduado em Reabilitação de Lesões e Correção Postural.</p>
+                    <p class="section-body text-reveal delay-2">Se você está cansado de fichas de treino genéricas,
+                        feitas iguais para todo mundo, meu trabalho é oferecer exatamente o contrário: um treino online
+                        individual, pensado para você.</p>
+                    <p class="section-body text-reveal delay-2">Através da consultoria online individual, desenvolvo
+                        treinos
+                        focados em ganho de massa muscular e estética, com atenção à postura e à execução correta dos
+                        exercícios — principalmente para quem está começando e quer fazer o caminho certo desde o
+                        início.</p>
+                    <p class="section-body text-reveal delay-2">Aqui você não fica perdido na academia, nem treina no
+                        improviso. Você segue um método estruturado, com acompanhamento profissional e foco em evolução
+                        real.</p>
+
+                    <div class="about-cta text-reveal delay-3">
+                        <a href="https://www.instagram.com/igor.ibs?igsh=aXN5cHhiY2o4MXJu" target="_blank"
+                            rel="noopener noreferrer" class="btn btn-secondary btn-instagram">
+                            <i class="ph ph-instagram-logo"></i> Ver Resultados na Prática
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 3: METHOD -->
+    <section class="method-section scroll-reveal" id="method">
+        <div class="container">
+            <div class="method-header">
+                <h2 class="section-title text-reveal">A Metodologia</h2>
+                <div class="title-line text-reveal delay-1"></div>
+            </div>
+
+            <div class="method-grid">
+                <div class="method-card card-reveal delay-1">
+                    <i class="ph ph-target card-icon"></i>
+                    <h3 class="card-title">Precisão Biomecânica</h3>
+                    <p class="card-body">Cada repetição é calculada. Otimização do vetor de força para máximo
+                        recrutamento de fibras e zero desperdício de energia. Execução impecável.</p>
+                </div>
+                <div class="method-card card-reveal delay-2">
+                    <i class="ph ph-barbell card-icon"></i>
+                    <h3 class="card-title">Sobrecarga Progressiva</h3>
+                    <p class="card-body">A estagnação é o inimigo. Implementamos um sistema metódico de aumento de
+                        stress tensional, forçando o corpo à adaptação constante.</p>
+                </div>
+                <div class="method-card card-reveal delay-3">
+                    <i class="ph ph-chart-line-up card-icon"></i>
+                    <h3 class="card-title">Estratégia Nutricional</h3>
+                    <p class="card-body">O combustível dita a máquina. Protocolos dietéticos sincronizados com a fase do
+                        treinamento, manipulando macronutrientes para composição corporal extrema.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4: PRICING (MENTORIA) -->
+    <section class="pricing-section scroll-reveal" id="pricing">
+        <div class="container">
+            <h2 class="section-title center text-reveal">Planos de Mentoria Online</h2>
+
+            <div class="pricing-grid">
+                <!-- Mentoria Bronze -->
+                <div class="pricing-card card-reveal delay-1">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Bronze</h3>
+                        <div class="pricing-price">R$170<span class="pricing-cents">,00</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="ph-bold ph-check"></i>Apenas ficha de treino</li>
+                    </ul>
+                    <a href="https://w.app/vwiara" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-secondary pricing-btn">Assinar Bronze</a>
+                </div>
+
+                <!-- Mentoria Prata -->
+                <div class="pricing-card card-reveal delay-2">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Prata</h3>
+                        <div class="pricing-price">R$320<span class="pricing-cents">,00</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="ph-bold ph-check"></i>Acompanhamento por 3 meses</li>
+                        <li><i class="ph-bold ph-check"></i>Ajustes de treino</li>
+                    </ul>
+                    <a href="https://w.app/vwiara" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-secondary pricing-btn">Assinar Prata</a>
+                </div>
+
+                <!-- Mentoria Ouro (Destaque) -->
+                <div class="pricing-card featured card-reveal delay-3">
+                    <div class="pricing-badge">Mais Popular</div>
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Ouro</h3>
+                        <div class="pricing-price">R$620<span class="pricing-cents">,00</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="ph-bold ph-check"></i>Acompanhamento por 6 meses</li>
+                        <li><i class="ph-bold ph-check"></i>Ajustes de treino</li>
+                        <li><i class="ph-bold ph-check"></i>Suporte prioritário</li>
+                    </ul>
+                    <a href="https://w.app/vwiara" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary pricing-btn">Assinar Ouro</a>
+                </div>
+                <!-- Mentoria Diamante -->
+                <div class="pricing-card card-reveal delay-4">
+                    <div class="pricing-header">
+                        <h3 class="pricing-title">Diamante</h3>
+                        <div class="pricing-price">R$1.020<span class="pricing-cents">,00</span></div>
+                    </div>
+                    <ul class="pricing-features">
+                        <li><i class="ph-bold ph-check"></i>Acompanhamento por 1 ano</li>
+                        <li><i class="ph-bold ph-check"></i>Ajustes de treino</li>
+                        <li><i class="ph-bold ph-check"></i>Suporte prioritário</li>
+                        <li><i class="ph-bold ph-check"></i>Acesso direto ao treinador</li>
+                        <li><i class="ph-bold ph-check"></i>Nutrição esportiva inclusa</li>
+                    </ul>
+                    <a href="https://w.app/vwiara" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-secondary pricing-btn">Assinar Diamante</a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 4.5: VIP IN-PERSON BANNER -->
+    <section class="vip-banner-section scroll-reveal" id="presencial">
+        <div class="container">
+            <div class="vip-banner-content card-reveal delay-1">
+                <div class="vip-text-block">
+                    <h2 class="vip-title">Atendimento Presencial <span class="vip-accent">VIP</span></h2>
+                    <p class="vip-description">
+                        Treinamento lado a lado na área de musculação. Foco absoluto em biomecânica, correção de falhas
+                        técnicas e extração máxima de performance. <br><br>
+                        <em>Acompanhamento por hora-aula com vagas extremamente limitadas.</em>
+                    </p>
+                </div>
+                <div class="vip-cta-block">
+                    <a href="https://w.app/vwiara" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary vip-btn">
+                        Consultar Disponibilidade
+                    </a>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SECTION 5: FINAL CTA -->
+    <section class="cta-section scroll-reveal" id="cta-section">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title text-reveal">Seu próximo nível <br>começa agora.</h2>
+                <div class="text-reveal delay-2">
+                    <a href="https://w.app/vwiara" target="_blank" rel="noopener noreferrer"
+                        class="btn btn-primary btn-large btn-animated">INICIAR PROJETO<i
+                            class="ph-bold ph-arrow-right"></i></a>
+                </div>
+            </div>
+        </div>
+
+        <!-- Background dark element for CTA -->
+        <div class="cta-bg-element"></div>
+    </section>
+
+    <footer>
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-logo-container">
+                    <img src="logo.png" alt="Igor Barbosa Logo" class="footer-logo-img">
+                </div>
+                <div class="footer-socials">
+                    <a href="https://www.instagram.com/igor.ibs?igsh=aXN5cHhiY2o4MXJu" target="_blank"
+                        rel="noopener noreferrer"><i class="ph ph-instagram-logo"></i></a>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2026 Alta Performance. Todos os direitos reservados.</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/gsap.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.2/ScrollTrigger.min.js"></script>
+    <script src="script.js"></script>
+</body>
+
+</html>
