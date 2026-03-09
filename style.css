@@ -384,42 +384,88 @@ section {
     margin-top: var(--spacing-sm);
 }
 
-.method-grid {
+.method-content-split {
     display: grid;
-    grid-template-columns: repeat(3, 1fr);
+    grid-template-columns: 1fr 1.5fr;
+    gap: var(--spacing-xl);
+    align-items: flex-start;
+    margin-bottom: var(--spacing-xl);
+}
+
+.method-video-wrapper {
+    width: 100%;
+    margin: 0 auto;
+    border-radius: 20px;
+    overflow: hidden;
+    box-shadow: 0 20px 50px rgba(0, 0, 0, 0.5);
+    border: 1px solid rgba(255, 255, 255, 0.05);
+    background-color: var(--bg-tertiary);
+    aspect-ratio: 9 / 16;
+    max-height: 80vh;
+    /* keeps it fully visible on screen */
+    display: flex;
+    justify-content: center;
+    position: sticky;
+    top: 100px;
+}
+
+.method-video {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    display: block;
+}
+
+.method-grid {
+    display: flex;
+    flex-direction: column;
     gap: var(--spacing-md);
 }
 
 .method-card {
-    background-color: var(--bg-secondary);
-    padding: var(--spacing-lg) var(--spacing-md);
+    background: linear-gradient(145deg, rgba(28, 28, 28, 0.4) 0%, rgba(20, 20, 20, 0.8) 100%);
+    backdrop-filter: blur(10px);
+    -webkit-backdrop-filter: blur(10px);
+    padding: 2rem;
     border: 1px solid rgba(255, 255, 255, 0.03);
-    transition: transform 0.5s var(--ease-out-expo), border-color 0.5s ease, background-color 0.5s ease;
-    display: flex;
-    flex-direction: column;
-    align-items: flex-start;
+    border-radius: 16px;
+    transition: transform 0.4s var(--ease-out-expo), border-color 0.4s ease, box-shadow 0.4s ease;
+    display: grid;
+    grid-template-columns: auto 1fr;
+    grid-template-rows: auto auto;
+    column-gap: 1.5rem;
+    row-gap: 0.5rem;
+    align-items: start;
 }
 
 .method-card:hover {
-    transform: translateY(-10px);
-    border-color: rgba(255, 255, 255, 0.1);
-    background-color: var(--bg-tertiary);
+    transform: translateX(10px);
+    border-color: rgba(121, 69, 189, 0.3);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
 }
 
 .card-icon {
+    grid-column: 1;
+    grid-row: 1 / span 2;
     font-size: 2.5rem;
     color: var(--accent-brand-light);
-    margin-bottom: var(--spacing-md);
+    margin-bottom: 0;
+    margin-top: 5px;
 }
 
 .card-title {
+    grid-column: 2;
+    grid-row: 1;
     font-size: 1.2rem;
-    margin-bottom: var(--spacing-sm);
+    margin-bottom: 0;
 }
 
 .card-body {
+    grid-column: 2;
+    grid-row: 2;
     color: var(--text-secondary);
     font-size: 0.95rem;
+    margin-bottom: 0;
 }
 
 .pricing-section {
@@ -731,6 +777,12 @@ footer {
     .pricing-grid {
         grid-template-columns: repeat(2, 1fr);
         gap: var(--spacing-lg);
+    }
+
+    .method-content-split {
+        grid-template-columns: 1fr;
+        gap: var(--spacing-lg);
+        margin-bottom: var(--spacing-md);
     }
 }
 
