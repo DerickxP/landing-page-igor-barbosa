@@ -12,21 +12,31 @@ document.addEventListener('DOMContentLoaded', () => {
     const airship = { frame: 0 };
     let imagesLoaded = 0;
 
+    let winWidth = window.innerWidth;
+    let winHeight = window.innerHeight;
+    let isHeroVisible = true;
+
+    // Intersection Observer to stop expensive drawing when Hero is off-screen
+    const heroObserver = new IntersectionObserver((entries) => {
+        entries.forEach(entry => {
+            isHeroVisible = entry.isIntersecting;
+        });
+    }, { rootMargin: "0px" });
+    const heroEl = document.querySelector('.hero-section');
+    if (heroEl) heroObserver.observe(heroEl);
+
     function resizeCanvas() {
-        const windowRatio = window.innerWidth / window.innerHeight;
+        const windowRatio = winWidth / winHeight;
         const videoRatio = 1280 / 720;
 
         if (windowRatio > videoRatio) {
-            canvas.width = window.innerWidth;
-            canvas.height = window.innerWidth / videoRatio;
+            canvas.width = winWidth;
+            canvas.height = winWidth / videoRatio;
         } else {
-            canvas.width = window.innerHeight * videoRatio;
-            canvas.height = window.innerHeight;
+            canvas.width = winHeight * videoRatio;
+            canvas.height = winHeight;
         }
     }
-
-    window.addEventListener('resize', resizeCanvas);
-    resizeCanvas();
 
     for (let i = 0; i < frameCount; i++) {
         const img = new Image();
@@ -65,6 +75,7 @@ document.addEventListener('DOMContentLoaded', () => {
 
     function animateSequence(time) {
         requestAnimationFrame(animateSequence);
+        if (!isHeroVisible) return; // Save CPU when offscreen
 
         const elapsed = time - lastTime;
         if (elapsed > fpsInterval && imagesLoaded > 10) {
@@ -84,16 +95,13 @@ document.addEventListener('DOMContentLoaded', () => {
     let particles = [];
 
     function resizeDustCanvas() {
-        dustCanvas.width = window.innerWidth;
-        dustCanvas.height = window.innerHeight;
+        dustCanvas.width = winWidth;
+        dustCanvas.height = winHeight;
     }
-
-    window.addEventListener('resize', resizeDustCanvas);
-    resizeDustCanvas();
 
     function initParticles() {
         particles = [];
-        const particleCount = window.innerWidth < 768 ? 40 : 100;
+        const particleCount = winWidth < 768 ? 20 : 60; // Reduced count for mobile performance
         for (let i = 0; i < particleCount; i++) {
             particles.push({
                 x: Math.random() * dustCanvas.width,
@@ -109,6 +117,9 @@ document.addEventListener('DOMContentLoaded', () => {
     initParticles();
 
     function animateParticles() {
+        requestAnimationFrame(animateParticles);
+        if (!isHeroVisible) return; // Save CPU when offscreen
+
         dctx.clearRect(0, 0, dustCanvas.width, dustCanvas.height);
 
         for (let i = 0; i < particles.length; i++) {
@@ -133,11 +144,28 @@ document.addEventListener('DOMContentLoaded', () => {
             if (p.opacity < 0) p.opacity = 0;
             if (p.opacity > 0.6) p.opacity = 0.6;
         }
-
-        requestAnimationFrame(animateParticles);
     }
 
-    animateParticles();
+    // Centralized debounced resize handler to prevent Layout Thrashing
+    let resizeTimer;
+    window.addEventListener('resize', () => {
+        clearTimeout(resizeTimer);
+        resizeTimer = setTimeout(() => {
+            winWidth = window.innerWidth;
+            winHeight = window.innerHeight;
+            requestAnimationFrame(() => {
+                resizeCanvas();
+                resizeDustCanvas();
+            });
+        }, 150);
+    });
+
+    // Initial sizing run batched
+    requestAnimationFrame(() => {
+        resizeCanvas();
+        resizeDustCanvas();
+        animateParticles();
+    });
 
     // === 3. GSAP ANIMATIONS & SCROLL REVEAL ===
     gsap.registerPlugin(ScrollTrigger);
