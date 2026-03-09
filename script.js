@@ -37,7 +37,6 @@ document.addEventListener('DOMContentLoaded', () => {
         }
     }
 
-    // Load FIRST frame immediately for LCP
     const firstImg = new Image();
     firstImg.src = currentFrame(0);
     images[0] = firstImg;
@@ -45,11 +44,7 @@ document.addEventListener('DOMContentLoaded', () => {
         imagesLoaded++;
         renderFrame(0);
 
-        // Lazy load the rest of the frames to unblock the main thread
         function loadRemainingFrames() {
-            // Yield the thread by loading in small chunks or at least deferring
-            // For now, simply deferring the creation of 79 Image objects is enough 
-            // to get it out of the critical LCP path.
             for (let i = 1; i < frameCount; i++) {
                 const img = new Image();
                 img.src = currentFrame(i);
