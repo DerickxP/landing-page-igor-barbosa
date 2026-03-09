@@ -1,4 +1,3 @@
-/* Base Reset & Variables */
 :root {
     --bg-base: #0a0a0a;
     --bg-secondary: #141414;
@@ -22,7 +21,6 @@
     --ease-out-expo: cubic-bezier(0.19, 1, 0.22, 1);
     --ease-in-out-cubic: cubic-bezier(0.645, 0.045, 0.355, 1);
 
-    /* Spacing */
     --spacing-sm: 1rem;
     --spacing-md: 2rem;
     --spacing-lg: 4rem;
@@ -364,7 +362,6 @@ section {
     margin-top: var(--spacing-md);
 }
 
-/* METHOD SECTION */
 .method-section {
     background-color: var(--bg-base);
 }
@@ -402,7 +399,6 @@ section {
     background-color: var(--bg-tertiary);
     aspect-ratio: 9 / 16;
     max-height: 80vh;
-    /* keeps it fully visible on screen */
     display: flex;
     justify-content: center;
     position: sticky;
@@ -628,7 +624,6 @@ section {
     white-space: nowrap;
 }
 
-/* VIP IN-PERSON BANNER SECTION */
 .vip-banner-section {
     background-color: var(--bg-base);
     padding: var(--spacing-lg) 0;
@@ -687,7 +682,6 @@ section {
     box-shadow: 0 5px 25px rgba(121, 69, 189, 0.6);
 }
 
-/* CTA SECTION */
 .cta-section {
     position: relative;
     padding: var(--spacing-xl) 0;
@@ -722,7 +716,6 @@ section {
     pointer-events: none;
 }
 
-/* FOOTER */
 footer {
     background-color: #050505;
     padding: var(--spacing-lg) 0 var(--spacing-md);
@@ -820,7 +813,6 @@ footer {
         transform: translateY(-5px);
     }
 
-    /* VIP Banner Mobile */
     .vip-banner-content {
         flex-direction: column;
         text-align: center;
