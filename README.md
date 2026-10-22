@@ -1,45 +1,43 @@
-# Igor Barbosa | Personal Trainer Landing Page
+# Landing page: Igor Barbosa, personal trainer
 
-![HTML5](https://img.shields.io/badge/html5-%23E34F26.svg?style=for-the-badge&logo=html5&logoColor=white)
-![CSS3](https://img.shields.io/badge/css3-%231572B6.svg?style=for-the-badge&logo=css3&logoColor=white)
-![JavaScript](https://img.shields.io/badge/javascript-%23323330.svg?style=for-the-badge&logo=javascript&logoColor=%23F7DF1E)
-![Vercel](https://img.shields.io/badge/vercel-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
-![Git](https://img.shields.io/badge/git-%23F05033.svg?style=for-the-badge&logo=git&logoColor=white)
-![Veo 3](https://img.shields.io/badge/Veo%203-0A2A5B.svg?style=for-the-badge&logo=google&logoColor=white)
-![Whisk](https://img.shields.io/badge/Whisk-FF6A00.svg?style=for-the-badge&logo=google&logoColor=white)
-![Flow](https://img.shields.io/badge/Flow-4300FF.svg?style=for-the-badge&logo=google&logoColor=white)
+![HTML5](https://img.shields.io/badge/HTML5-E34F26?logo=html5&logoColor=white)
+![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
+![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
+![GSAP](https://img.shields.io/badge/GSAP-ScrollTrigger-88CE02?logo=greensock&logoColor=white)
 
-Uma landing page focada em alta conversão e estética, desenvolvida sob medida para o personal trainer Igor Barbosa. O projeto apresenta os planos de consultoria online e atendimento VIP presencial com um design inovador e hiper-dinâmico.
+Landing page sob medida para um personal trainer, apresentando a metodologia, os
+planos de mentoria online e o atendimento presencial. Feita em HTML, CSS e
+JavaScript puro, com animações guiadas pelo scroll.
 
-## 🌐 Deploy Ativo
-O projeto está online e acessível publicamente através da infraestrutura de alta performance da Vercel:
-👉 **[Acessar a Landing Page - ibspersonal.vercel.app](https://ibspersonal.vercel.app)**
+> Projeto desenvolvido para um cliente; todos os direitos reservados ao contratante.
 
-## 🚀 Tecnologias e Recursos Utilizados
+## Como funciona
 
-- **HTML5 & CSS3 (Vanilla)**: Estruturação semântica e estilização avançada com variáveis, Flexbox e CSS Grid.
-- **JavaScript (ES6+)**: Lógica de interações DOM.
-- **Animação Geração (AI):** A animação central de fundo do site foi inteiramente gerada e orquestrada utilizando o poder combinado de **Veo 3**, **Whisk** e **Flow**.
-- **GSAP & ScrollTrigger**: Animações profissionais e de alta performance baseadas no scroll do usuário.
-- **Micro-interações de Interface**: Efeitos de "Glassmorphism", iluminação de borda reativa ao mouse (Edge Lighting) e botões com imantação (Magnetic Buttons).
-- **Design Responsivo (Mobile-First adaptado)**: Interfaces fluídas do celular ao monitor ultrawide.
-- **Phosphor Icons**: Biblioteca de ícones minimalistas.
+- **Animação de fundo em canvas:** uma sequência de 80 quadros, extraída de um vídeo
+  gerado com IA (Veo 3, Whisk e Flow), roda em loop a 20 fps no `<canvas>` e pausa
+  quando a seção inicial sai da tela.
+- **GSAP + ScrollTrigger** (via CDN) para revelar títulos, cards e seções.
+- **Interações com o mouse:** brilho de borda que acompanha o cursor nos cards de
+  preço e botões com efeito magnético.
+- **Glassmorphism** com `backdrop-filter`, ícones em SVG inline e layout
+  responsivo com media queries.
+- Scripts não críticos carregados com `requestIdleCallback`.
 
-## 💻 Como rodar o projeto localmente
+## Como rodar
 
-Por ser um projeto focado em performance absoluta na ponta, ele utiliza apenas tecnologias nativas do navegador, sem necessidade de *builds* ou servidores complexos com Node.js/React.
+Sem build nem dependências locais:
 
-1. Clone o repositório:
-   ```bash
-   git clone https://github.com/DerickxP/landing-page-igor-barbosa.git
-   ```
-2. Abra a pasta do projeto em seu computador.
-3. Dê um duplo-clique e abra o arquivo `index.html` no seu navegador favorito.
-   *(Dica para desenvolvedores: utilize a extensão **Live Server** no VS Code para visualizar edições em tempo real).*
+```bash
+git clone https://github.com/DerickxP/landing-page-igor-barbosa.git
+cd landing-page-igor-barbosa
+python3 -m http.server 8000   # http://localhost:8000
+```
 
-## ⚠️ Nota Legal e Direitos de Uso
+A pasta `Landing Page - IBS/` guarda as versões da animação usadas no processo
+de criação.
 
-Este projeto foi desenvolvido como um **trabalho comercial sob demanda** para um cliente real.
+## Direitos de uso
 
-- O **código estrutural visual** pode ser utilizado como objeto de estudo para portfólio do desenvolvedor.
-- A **identidade visual**, imagens, e estratégia de *copywriting* (textos e oferta de preços) **são de propriedade exclusiva do treinador Igor Barbosa**, não possuindo licença open-source (MIT/GPL) para plágio comercial ou reutilização de marca por terceiros.
+O código pode ser consultado como referência de estudo. A identidade visual,
+as imagens, os textos e a oferta de preços pertencem ao cliente e não podem ser
+reutilizados.
