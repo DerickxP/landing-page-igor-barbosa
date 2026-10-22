@@ -4,6 +4,9 @@
 ![CSS3](https://img.shields.io/badge/CSS3-1572B6?logo=css3&logoColor=white)
 ![JavaScript](https://img.shields.io/badge/JavaScript-F7DF1E?logo=javascript&logoColor=black)
 ![GSAP](https://img.shields.io/badge/GSAP-ScrollTrigger-88CE02?logo=greensock&logoColor=white)
+![Vercel](https://img.shields.io/badge/Vercel-000000?logo=vercel&logoColor=white)
+
+**[▶ Ver o site no ar](https://ibs-personal.vercel.app)**
 
 Landing page sob medida para um personal trainer, apresentando a metodologia, os
 planos de mentoria online e o atendimento presencial. Feita em HTML, CSS e
